@@ -8,9 +8,98 @@ li {
 
 /* Для мобильных устройств */
 @media (max-width: 600px) {
-    body {
-        background-color: lightblue;
+/* Основной стиль */
+header {
+    color: white;
+    height: 650px;
+    background-image: url('img/stallegion.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.header-div-h1 {
+    font-family: "Wallpoet", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3em;
+}
+
+.header-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.radio-inputs, .radio-inputs2 {
+    margin: 10px 0;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+}
+
+.radio-inputs .radio .name, .radio-inputs2 .radio2 .name2 {
+    font-size: 1em;
+}
+
+.container {
+    display: grid;
+    place-items: center;
+    margin-top: 20px;
+}
+
+.ui-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+}
+
+.nay-div-h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.nav-div-h3 {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+/* Адаптация для мобильных устройств */
+@media (max-width: 768px) {
+    header {
+        height: auto;
+        padding: 20px 0;
     }
+
+    .header-div {
+        flex-direction: column;
+    }
+
+    .radio-inputs, .radio-inputs2 {
+        width: 100%;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .header-div-h1, .nay-div-h1 {
+        font-size: 2em;
+    }
+
+    .nav-div-h3 {
+        font-size: 1em;
+    }
+
+    .ui-btn {
+        width: 80%;
+        font-size: 1em;
+    }
+
+    .container {
+        margin-top: 15px;
+    }
+}
+
 }
 
 /* Для планшетов */
@@ -21,9 +110,7 @@ li {
 }
 
 /* Для десктопов */
-@media (min-width: 1025px) {}
-
-header {
+@media (min-width: 1025px) {header {
     color: white;
     height: 650px;
     background-image: url('img/stallegion.jpg');
@@ -416,3 +503,7 @@ header {
 .nav-div-2{
     align-items: center;
 }
+
+
+}
+
