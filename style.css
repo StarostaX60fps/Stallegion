@@ -6,23 +6,33 @@ li {
     margin: 0;
 }
 
-/* Для мобильных устройств */
-@media (max-width: 600px) {
-/* Основной стиль */
-header {
-    color: white;
-    height: 650px;
-    background-image: url('img/stallegion.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+
+
+/* Для планшетов */
+@media (min-width: 601px) and (max-width: 1024px) {
+    body {
+        background-color: lightgreen;
+    }
 }
 
-.header-div-h1 {
-    font-family: "Wallpoet", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 3em;
+@media (max-width: 600px) {
+    /* Переменные для основного стиля */
+:root {
+    --main-font-family: "Wallpoet", serif;
+    --main-color: white;
+    --header-height: 650px;
+    --font-size-large: 3em;
+    --font-size-medium: 2.5rem;
+    --font-size-small: 1.2rem;
+    --button-padding: 10px 15px;
+    --button-font-size: 1rem;
+}
+
+/* Основной стиль */
+header {
+    color: var(--main-color);
+    height: var(--header-height);
+    background: url('img/stallegion.jpg') center / cover no-repeat;
 }
 
 .header-div {
@@ -32,6 +42,12 @@ header {
     text-align: center;
 }
 
+.header-div-h1 {
+    font-family: var(--main-font-family);
+    font-weight: 400;
+    font-size: var(--font-size-large);
+}
+
 .radio-inputs, .radio-inputs2 {
     margin: 10px 0;
     width: 80%;
@@ -39,8 +55,8 @@ header {
     justify-content: center;
 }
 
-.radio-inputs .radio .name, .radio-inputs2 .radio2 .name2 {
-    font-size: 1em;
+.radio-inputs .name, .radio-inputs2 .name2 {
+    font-size: 1rem;
 }
 
 .container {
@@ -50,30 +66,33 @@ header {
 }
 
 .ui-btn {
-    padding: 10px 15px;
-    font-size: 14px;
+    padding: var(--button-padding);
+    font-size: var(--button-font-size);
 }
 
 .nay-div-h1 {
-    font-size: 2.5em;
+    font-size: var(--font-size-medium);
     text-align: center;
     margin: 10px 0;
 }
 
 .nav-div-h3 {
-    font-size: 1.2em;
+    font-size: var(--font-size-small);
     margin-top: 0;
 }
 
 /* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-    header {
-        height: auto;
-        padding: 20px 0;
+    :root {
+        --header-height: auto;
+        --font-size-large: 2rem;
+        --font-size-medium: 2rem;
+        --font-size-small: 1rem;
+        --button-font-size: 1rem;
     }
 
-    .header-div {
-        flex-direction: column;
+    header {
+        padding: 20px 0;
     }
 
     .radio-inputs, .radio-inputs2 {
@@ -82,17 +101,8 @@ header {
         box-sizing: border-box;
     }
 
-    .header-div-h1, .nay-div-h1 {
-        font-size: 2em;
-    }
-
-    .nav-div-h3 {
-        font-size: 1em;
-    }
-
     .ui-btn {
         width: 80%;
-        font-size: 1em;
     }
 
     .container {
@@ -102,408 +112,401 @@ header {
 
 }
 
-/* Для планшетов */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        background-color: lightgreen;
-    }
-}
-
 /* Для десктопов */
-@media (min-width: 1025px) {header {
-    color: white;
-    height: 650px;
-    background-image: url('img/stallegion.jpg');
-    /* Укажите путь к вашему изображению */
-    background-size: cover;
-    /* Масштабирует изображение так, чтобы оно занимало весь экран */
-    background-position: center;
-    /* Центрирует изображение */
-    background-repeat: no-repeat;
-    /* Не повторяет изображение */
-}
-
-.header-div-h1 {
-    font-family: "Wallpoet", serif;
-    font-weight: 400;
-    font-style: normal;
-}
-
-
-.header-div {
-    display: flex;
-    justify-content: space-around;
-}
-
-.ul {
-    margin-left: -500px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.languige {
-
-    display: flex;
-    justify-content: space-around;
-}
-
-.header-div-div {
-    display: flex;
-    justify-content: space-around;
-}
-
-.languige-button {
-    width: 100px;
-}
-
-
-
-/* From Uiverse.io by gharsh11032000 */
-.radio-button-container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.radio-button {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-}
-
-.radio-button__input {
-    position: absolute;
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.radio-button__label {
-    display: inline-block;
-    padding-left: 25px;
-    margin-bottom: 10px;
-    position: relative;
-    font-size: 10px;
-    color: #f2f2f2;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-}
-
-.radio-button__custom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    border: 2px solid #555;
-    transition: all 0.3s ease;
-}
-
-.radio-button__input:checked+.radio-button__label .radio-button__custom {
-    background-color: #4c8bf5;
-    border-color: transparent;
-    transform: scale(0.8);
-    box-shadow: 0 0 20px #4c8bf580;
-}
-
-.radio-button__input:checked+.radio-button__label {
-    color: #4c8bf5;
-}
-
-.radio-button__label:hover .radio-button__custom {
-    transform: scale(1.2);
-    border-color: #4c8bf5;
-    box-shadow: 0 0 20px #4c8bf580;
-}
-
-.Menu {
-    margin-right: 20px;
-}
-
-/* From Uiverse.io by Yaya12085 */
-.radio-inputs {
-    margin-left: 100px;
-    margin-right: 100px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 0.5rem;
-
-    box-sizing: border-box;
-    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-    padding: 0.25rem;
-    width: 300px;
-    font-size: 14px;
-}
-
-.radio-inputs .radio {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-.radio-inputs .radio input {
-    display: none;
-}
-
-.radio-inputs .radio .name {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    border: none;
-    padding: .5rem 0;
-    color: rgb(255, 254, 254);
-    transition: all .15s ease-in-out;
-}
-
-.radio-inputs .radio input:checked+.name {
-    background-color: #2b2b2b;
-    font-weight: 600;
-}
-
-.radio-inputs2 {
-    margin-right: -70px;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 0.5rem;
-
-    box-sizing: border-box;
-    box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
-    padding: 0.25rem;
-    width: 300px;
-    font-size: 14px;
-}
-
-.radio-inputs2 .radio2 {
-    flex: 1 1 auto;
-    text-align: center;
-}
-
-.radio-inputs2 .radio2 input {
-    display: none;
-}
-
-.radio-inputs2 .radio2 .name2 {
-    display: flex;
-    cursor: pointer;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    border: none;
-    padding: .5rem 0;
-    color: rgb(255, 254, 254);
-    transition: all .15s ease-in-out;
-}
-
-.radio-inputs2 .radio2 input:checked+.name2 {
-    background-color: #2b2b2b;
-    font-weight: 600;
-}
-
-.nav {
-    margin-top: 100px;
-    text-align: center;
-}
-
-.nay-div-h1 {
-    text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
-    color: rgb(243, 232, 186);
-    font-family: "Abril Fatface", serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 100px;
-}
-
-.nav-div-h3 {
-    margin-top: -8px;
-    text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
-    font-family: "Permanent Marker", cursive;
-    font-weight: 400;
-    font-style: normal;
-}
-
-.nav-div-button {
-    margin-top: 10px;
-}
-
-
-.container {
-    display: grid;
-    place-items: center;
-    margin-top: 10px;
-}
-
-.ui-btn {
-    --btn-default-bg: rgb(41, 41, 41);
-    --btn-padding: 15px 20px;
-    --btn-hover-bg: rgb(51, 51, 51);
-    --btn-transition: .3s;
-    --btn-letter-spacing: .1rem;
-    --btn-animation-duration: 1.2s;
-    --btn-shadow-color: rgba(0, 0, 0, 0.137);
-    --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
-    --hover-btn-color: #FAC921;
-    --default-btn-color: #fff;
-    --font-size: 16px;
-    /* 👆 this field should not be empty */
-    --font-weight: 600;
-    --font-family: Menlo, Roboto Mono, monospace;
-    /* 👆 this field should not be empty */
-}
-
-/* button settings 👆 */
-
-.ui-btn {
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: var(--btn-padding);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--default-btn-color);
-    font: var(--font-weight) var(--font-size) var(--font-family);
-    background: var(--btn-default-bg);
-    border: none;
-    cursor: pointer;
-    transition: var(--btn-transition);
-    overflow: hidden;
-    box-shadow: var(--btn-shadow);
-}
-
-.ui-btn span {
-    letter-spacing: var(--btn-letter-spacing);
-    transition: var(--btn-transition);
-    box-sizing: border-box;
-    position: relative;
-    background: inherit;
-}
-
-.ui-btn span::before {
-    box-sizing: border-box;
-    position: absolute;
-    content: "";
-    background: inherit;
-}
-
-.ui-btn:hover,
-.ui-btn:focus {
-    background: var(--btn-hover-bg);
-}
-
-.ui-btn:hover span,
-.ui-btn:focus span {
-    color: var(--hover-btn-color);
-}
-
-.ui-btn:hover span::before,
-.ui-btn:focus span::before {
-    animation: chitchat linear both var(--btn-animation-duration);
-}
-
-@keyframes chitchat {
-    0% {
-        content: "#";
+@media (min-width: 1025px) {
+    header {
+        color: white;
+        height: 650px;
+        background-image: url('img/stallegion.jpg');
+        /* Укажите путь к вашему изображению */
+        background-size: cover;
+        /* Масштабирует изображение так, чтобы оно занимало весь экран */
+        background-position: center;
+        /* Центрирует изображение */
+        background-repeat: no-repeat;
+        /* Не повторяет изображение */
     }
 
-    5% {
-        content: ".";
+    .header-div-h1 {
+        font-family: "Wallpoet", serif;
+        font-weight: 400;
+        font-style: normal;
     }
 
-    10% {
-        content: "^{";
+
+    .header-div {
+        display: flex;
+        justify-content: space-around;
     }
 
-    15% {
-        content: "-!";
+    .ul {
+        margin-left: -500px;
+        display: flex;
+        justify-content: space-around;
     }
 
-    20% {
-        content: "#$_";
+    .languige {
+
+        display: flex;
+        justify-content: space-around;
     }
 
-    25% {
-        content: "№:0";
+    .header-div-div {
+        display: flex;
+        justify-content: space-around;
     }
 
-    30% {
-        content: "#{+.";
+    .languige-button {
+        width: 100px;
     }
 
-    35% {
-        content: "@}-?";
+
+
+    /* From Uiverse.io by gharsh11032000 */
+    .radio-button-container {
+        display: flex;
+        align-items: center;
+        gap: 20px;
     }
 
-    40% {
-        content: "?{4@%";
+    .radio-button {
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
     }
 
-    45% {
-        content: "=.,^!";
+    .radio-button__input {
+        position: absolute;
+        opacity: 0;
+        width: 0;
+        height: 0;
     }
 
-    50% {
-        content: "?2@%";
+    .radio-button__label {
+        display: inline-block;
+        padding-left: 25px;
+        margin-bottom: 10px;
+        position: relative;
+        font-size: 10px;
+        color: #f2f2f2;
+        font-weight: 600;
+        cursor: pointer;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
     }
 
-    55% {
-        content: "\;1}]";
+    .radio-button__custom {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 2px solid #555;
+        transition: all 0.3s ease;
     }
 
-    60% {
-        content: "?{%:%";
-        right: 0;
+    .radio-button__input:checked+.radio-button__label .radio-button__custom {
+        background-color: #4c8bf5;
+        border-color: transparent;
+        transform: scale(0.8);
+        box-shadow: 0 0 20px #4c8bf580;
     }
 
-    65% {
-        content: "|{f[4";
-        right: 0;
+    .radio-button__input:checked+.radio-button__label {
+        color: #4c8bf5;
     }
 
-    70% {
-        content: "{4%0%";
-        right: 0;
+    .radio-button__label:hover .radio-button__custom {
+        transform: scale(1.2);
+        border-color: #4c8bf5;
+        box-shadow: 0 0 20px #4c8bf580;
     }
 
-    75% {
-        content: "'1_0<";
-        right: 0;
+    .Menu {
+        margin-right: 20px;
     }
 
-    80% {
-        content: "{0%";
-        right: 0;
+    /* From Uiverse.io by Yaya12085 */
+    .radio-inputs {
+        margin-left: 100px;
+        margin-right: 100px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 300px;
+        font-size: 14px;
     }
 
-    85% {
-        content: "]>'";
-        right: 0;
+    .radio-inputs .radio {
+        flex: 1 1 auto;
+        text-align: center;
     }
 
-    90% {
-        content: "4";
-        right: 0;
+    .radio-inputs .radio input {
+        display: none;
     }
 
-    95% {
-        content: "2";
-        right: 0;
+    .radio-inputs .radio .name {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        border: none;
+        padding: .5rem 0;
+        color: rgb(255, 254, 254);
+        transition: all .15s ease-in-out;
     }
 
-    100% {
+    .radio-inputs .radio input:checked+.name {
+        background-color: #2b2b2b;
+        font-weight: 600;
+    }
+
+    .radio-inputs2 {
+        margin-right: -70px;
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 0.5rem;
+
+        box-sizing: border-box;
+        box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
+        padding: 0.25rem;
+        width: 300px;
+        font-size: 14px;
+    }
+
+    .radio-inputs2 .radio2 {
+        flex: 1 1 auto;
+        text-align: center;
+    }
+
+    .radio-inputs2 .radio2 input {
+        display: none;
+    }
+
+    .radio-inputs2 .radio2 .name2 {
+        display: flex;
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.5rem;
+        border: none;
+        padding: .5rem 0;
+        color: rgb(255, 254, 254);
+        transition: all .15s ease-in-out;
+    }
+
+    .radio-inputs2 .radio2 input:checked+.name2 {
+        background-color: #2b2b2b;
+        font-weight: 600;
+    }
+
+    .nav {
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    .nay-div-h1 {
+        text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.5);
+        color: rgb(243, 232, 186);
+        font-family: "Abril Fatface", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 100px;
+    }
+
+    .nav-div-h3 {
+        margin-top: -8px;
+        text-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
+        font-family: "Permanent Marker", cursive;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .nav-div-button {
+        margin-top: 10px;
+    }
+
+
+    .container {
+        display: grid;
+        place-items: center;
+        margin-top: 10px;
+    }
+
+    .ui-btn {
+        --btn-default-bg: rgb(41, 41, 41);
+        --btn-padding: 15px 20px;
+        --btn-hover-bg: rgb(51, 51, 51);
+        --btn-transition: .3s;
+        --btn-letter-spacing: .1rem;
+        --btn-animation-duration: 1.2s;
+        --btn-shadow-color: rgba(0, 0, 0, 0.137);
+        --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+        --hover-btn-color: #FAC921;
+        --default-btn-color: #fff;
+        --font-size: 16px;
+        /* 👆 this field should not be empty */
+        --font-weight: 600;
+        --font-family: Menlo, Roboto Mono, monospace;
+        /* 👆 this field should not be empty */
+    }
+
+    /* button settings 👆 */
+
+    .ui-btn {
+        border-radius: 10px;
+        box-sizing: border-box;
+        padding: var(--btn-padding);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--default-btn-color);
+        font: var(--font-weight) var(--font-size) var(--font-family);
+        background: var(--btn-default-bg);
+        border: none;
+        cursor: pointer;
+        transition: var(--btn-transition);
+        overflow: hidden;
+        box-shadow: var(--btn-shadow);
+    }
+
+    .ui-btn span {
+        letter-spacing: var(--btn-letter-spacing);
+        transition: var(--btn-transition);
+        box-sizing: border-box;
+        position: relative;
+        background: inherit;
+    }
+
+    .ui-btn span::before {
+        box-sizing: border-box;
+        position: absolute;
         content: "";
-        right: 0;
+        background: inherit;
     }
+
+    .ui-btn:hover,
+    .ui-btn:focus {
+        background: var(--btn-hover-bg);
+    }
+
+    .ui-btn:hover span,
+    .ui-btn:focus span {
+        color: var(--hover-btn-color);
+    }
+
+    .ui-btn:hover span::before,
+    .ui-btn:focus span::before {
+        animation: chitchat linear both var(--btn-animation-duration);
+    }
+
+    @keyframes chitchat {
+        0% {
+            content: "#";
+        }
+
+        5% {
+            content: ".";
+        }
+
+        10% {
+            content: "^{";
+        }
+
+        15% {
+            content: "-!";
+        }
+
+        20% {
+            content: "#$_";
+        }
+
+        25% {
+            content: "№:0";
+        }
+
+        30% {
+            content: "#{+.";
+        }
+
+        35% {
+            content: "@}-?";
+        }
+
+        40% {
+            content: "?{4@%";
+        }
+
+        45% {
+            content: "=.,^!";
+        }
+
+        50% {
+            content: "?2@%";
+        }
+
+        55% {
+            content: "\;1}]";
+        }
+
+        60% {
+            content: "?{%:%";
+            right: 0;
+        }
+
+        65% {
+            content: "|{f[4";
+            right: 0;
+        }
+
+        70% {
+            content: "{4%0%";
+            right: 0;
+        }
+
+        75% {
+            content: "'1_0<";
+            right: 0;
+        }
+
+        80% {
+            content: "{0%";
+            right: 0;
+        }
+
+        85% {
+            content: "]>'";
+            right: 0;
+        }
+
+        90% {
+            content: "4";
+            right: 0;
+        }
+
+        95% {
+            content: "2";
+            right: 0;
+        }
+
+        100% {
+            content: "";
+            right: 0;
+        }
+    }
+
+    .nav-div-2 {
+        align-items: center;
+    }
+
+
 }
-
-.nav-div-2{
-    align-items: center;
-}
-
-
-}
-
