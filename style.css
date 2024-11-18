@@ -9,119 +9,19 @@ li {
 
 
 /* Для планшетов */
-@media (min-width: 601px) and (max-width: 1024px) {
-    body {
-        background-color: lightgreen;
-    }
-}
+@media (min-width: 601px) and (max-width: 1024px) {}
 
-@media (max-width: 600px) {
 
-    /* Переменные для основного стиля */
-    :root {
-        --main-font-family: "Wallpoet", serif;
-        --main-color: white;
-        --header-height: 650px;
-        --font-size-large: 3em;
-        --font-size-medium: 2.5rem;
-        --font-size-small: 1.2rem;
-        --button-padding: 10px 15px;
-        --button-font-size: 1rem;
-    }
 
-    /* Основной стиль */
-    header {
-        color: var(--main-color);
-        height: var(--header-height);
-        background: url('img/stallegion.jpg') center / cover no-repeat;
-    }
 
-    .header-div {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .header-div-h1 {
-        font-family: var(--main-font-family);
-        font-weight: 400;
-        font-size: var(--font-size-large);
-    }
-
-    .radio-inputs,
-    .radio-inputs2 {
-        margin: 10px 0;
-        width: 80%;
-        display: flex;
-        justify-content: center;
-    }
-
-    .radio-inputs .name,
-    .radio-inputs2 .name2 {
-        font-size: 1rem;
-    }
-
-    .container {
-        display: grid;
-        place-items: center;
-        margin-top: 20px;
-    }
-
-    .ui-btn {
-        padding: var(--button-padding);
-        font-size: var(--button-font-size);
-    }
-
-    .nay-div-h1 {
-        font-size: var(--font-size-medium);
-        text-align: center;
-        margin: 10px 0;
-    }
-
-    .nav-div-h3 {
-        font-size: var(--font-size-small);
-        margin-top: 0;
-    }
-
-    /* Адаптация для мобильных устройств */
-    @media (max-width: 768px) {
-        :root {
-            --header-height: auto;
-            --font-size-large: 2rem;
-            --font-size-medium: 2rem;
-            --font-size-small: 1rem;
-            --button-font-size: 1rem;
-        }
-
-        header {
-            padding: 20px 0;
-        }
-
-        .radio-inputs,
-        .radio-inputs2 {
-            width: 100%;
-            padding: 0 10px;
-            box-sizing: border-box;
-        }
-
-        .ui-btn {
-            width: 80%;
-        }
-
-        .container {
-            margin-top: 15px;
-        }
-    }
-
-}
+@media (max-width: 600px) {}
 
 /* Для десктопов */
 @media (min-width: 1025px) {
     header {
         color: white;
         height: 650px;
-        background-image: url('img/stallegion.jpg');
+        background-image: url('img/изображение.jpg');
         /* Укажите путь к вашему изображению */
         background-size: cover;
         /* Масштабирует изображение так, чтобы оно занимало весь экран */
@@ -129,6 +29,16 @@ li {
         /* Центрирует изображение */
         background-repeat: no-repeat;
         /* Не повторяет изображение */
+        /* color: white;
+        height: 650px;
+        background-image: url('img/stallegion.jpg');
+         Укажите путь к вашему изображению 
+        background-size: cover;
+         Масштабирует изображение так, чтобы оно занимало весь экран 
+        background-position: center;
+         Центрирует изображение 
+        background-repeat: no-repeat;
+        Не повторяет изображение */
     }
 
     .header-div-h1 {
@@ -553,7 +463,7 @@ li {
 
 /* Содержимое модального окна */
 .modal-content {
-    
+
     text-align: center;
 }
 
@@ -574,7 +484,7 @@ li {
     --width: 100px;
     --height: 35px;
     --tooltip-height: 35px;
-    --tooltip-width: 90px;
+    --tooltip-width: 150px;
     --gap-between-tooltip-to-button: 18px;
     --button-color: #1163ff;
     --tooltip-color: #fff;
@@ -633,7 +543,6 @@ li {
     position: absolute;
     width: 100%;
     height: 100%;
-    left: 0;
     color: #fff;
 }
 
