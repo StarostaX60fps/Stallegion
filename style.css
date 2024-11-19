@@ -19,26 +19,18 @@ li {
 /* Для десктопов */
 @media (min-width: 1025px) {
     header {
+
         color: white;
         height: 650px;
-        background-image: url('img/изображение.jpg');
-        /* Укажите путь к вашему изображению */
+        background-image: url('img/stallegion.jpg');
+        /* Укажите путь к вашему изображению*/
         background-size: cover;
-        /* Масштабирует изображение так, чтобы оно занимало весь экран */
+        /* Масштабирует изображение так, */
+        /* чтобы оно занимало весь экран*/
         background-position: center;
-        /* Центрирует изображение */
+        /* Центрирует изображение*/
         background-repeat: no-repeat;
         /* Не повторяет изображение */
-        /* color: white;
-        height: 650px;
-        background-image: url('img/stallegion.jpg');
-         Укажите путь к вашему изображению 
-        background-size: cover;
-         Масштабирует изображение так, чтобы оно занимало весь экран 
-        background-position: center;
-         Центрирует изображение 
-        background-repeat: no-repeat;
-        Не повторяет изображение */
     }
 
     .header-div-h1 {
@@ -592,4 +584,19 @@ li {
 
 .button:hover:before {
     bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+.main-div-ul{
+    margin-top:50px ;
+    display: flex;
+    justify-content: space-around;
+}
+
+.card-li {
+    width: 190px;
+    height: 254px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+        -15px -15px 30px #ffffff;
 }
