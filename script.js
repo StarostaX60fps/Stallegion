@@ -21,3 +21,5 @@ window.addEventListener('click', (event) => {
 });
 
 const myModalAlternative = new bootstrap.Modal('#myModal', options)
+
+

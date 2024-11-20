@@ -6,21 +6,9 @@ li {
     margin: 0;
 }
 
-
-
-/* Для планшетов */
-@media (min-width: 601px) and (max-width: 1024px) {}
-
-
-/* Для десктопов */
-@media (min-width: 1025px) {
-.modal{
-    display: none;
-}
-
+@media (max-width: 600px) {
     header {
-
-        height: 650px;
+        height: 100%;
         background-image: url('img/stallegion.jpg');
         background-size: cover;
         background-position: center;
@@ -32,22 +20,10 @@ li {
         font-family: "Wallpoet", serif;
         font-weight: 400;
         font-style: normal;
-    }
-
-
-    .header-div {
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .ul {
-        margin-left: -500px;
-        display: flex;
-        justify-content: space-around;
+        font-size: 20px;
     }
 
     .languige {
-
         display: flex;
         justify-content: space-around;
     }
@@ -62,86 +38,21 @@ li {
     }
 
 
-
-    /* From Uiverse.io by gharsh11032000 */
-    .radio-button-container {
+    .div-modal {
         display: flex;
-        align-items: center;
-        gap: 20px;
+        justify-content: space-around;
     }
 
-    .radio-button {
-        display: inline-block;
-        position: relative;
-        cursor: pointer;
-    }
-
-    .radio-button__input {
-        position: absolute;
-        opacity: 0;
-        width: 0;
-        height: 0;
-    }
-
-    .radio-button__label {
-        display: inline-block;
-        padding-left: 25px;
-        margin-bottom: 10px;
-        position: relative;
-        font-size: 10px;
-        color: #f2f2f2;
-        font-weight: 600;
-        cursor: pointer;
-        text-transform: uppercase;
-        transition: all 0.3s ease;
-    }
-
-    .radio-button__custom {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 15px;
-        height: 15px;
-        border-radius: 50%;
-        border: 2px solid #555;
-        transition: all 0.3s ease;
-    }
-
-    .radio-button__input:checked+.radio-button__label .radio-button__custom {
-        background-color: #4c8bf5;
-        border-color: transparent;
-        transform: scale(0.8);
-        box-shadow: 0 0 20px #4c8bf580;
-    }
-
-    .radio-button__input:checked+.radio-button__label {
-        color: #4c8bf5;
-    }
-
-    .radio-button__label:hover .radio-button__custom {
-        transform: scale(1.2);
-        border-color: #4c8bf5;
-        box-shadow: 0 0 20px #4c8bf580;
-    }
-
-    .Menu {
-        margin-right: 20px;
-    }
-
-    /* From Uiverse.io by Yaya12085 */
     .radio-inputs {
-        margin-left: 100px;
-        margin-right: 100px;
+        margin-left: 0px;
         position: relative;
-        display: flex;
         flex-wrap: wrap;
         border-radius: 0.5rem;
-
         box-sizing: border-box;
         box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
         padding: 0.25rem;
-        width: 300px;
-        font-size: 14px;
+        width: 100px;
+        font-size: 8px;
     }
 
     .radio-inputs .radio {
@@ -171,17 +82,15 @@ li {
     }
 
     .radio-inputs2 {
-        margin-right: -70px;
+        margin-left: -50px;
         position: relative;
-        display: flex;
         flex-wrap: wrap;
         border-radius: 0.5rem;
-
         box-sizing: border-box;
         box-shadow: 0 0 0px 1px rgba(0, 0, 0, 0.06);
         padding: 0.25rem;
-        width: 300px;
-        font-size: 14px;
+        width: 100px;
+        font-size: 8px;
     }
 
     .radio-inputs2 .radio2 {
@@ -211,7 +120,7 @@ li {
     }
 
     .nav {
-        margin-top: 100px;
+        margin-top: 10px;
         text-align: center;
     }
 
@@ -221,7 +130,7 @@ li {
         font-family: "Abril Fatface", serif;
         font-weight: 400;
         font-style: normal;
-        font-size: 100px;
+        font-size: 50px;
     }
 
     .nav-div-h3 {
@@ -230,6 +139,7 @@ li {
         font-family: "Permanent Marker", cursive;
         font-weight: 400;
         font-style: normal;
+        font-size: 15px;
     }
 
     .nav-div-button {
@@ -263,7 +173,13 @@ li {
 
     /* button settings 👆 */
 
+    .ui-btn-span {
+        font-size: 10px;
+    }
+
     .ui-btn {
+        height: 30%;
+        width: 30%;
         border-radius: 10px;
         box-sizing: border-box;
         padding: var(--btn-padding);
@@ -410,208 +326,171 @@ li {
     }
 
 
-}
-
-
-
-.modal {
-    display: none;
-    /* Скрыто по умолчанию */
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.5);
-    /* Затемнение фона */
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-/* From Uiverse.io by adamgiebl */
-.card {
-    margin-top: -150px;
-    margin-left: 530px;
-    width: 190px;
-    height: 254px;
-    border-radius: 20px;
-    padding: 5px;
-    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
-    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
-}
-
-.card__content {
-    background: rgb(5, 6, 45);
-    border-radius: 17px;
-    width: 100%;
-    height: 100%;
-}
 
 
 
 
+    .modal {
+        display: none;
+        /* Скрыто по умолчанию */
+        position: fixed;
+        background-color: rgba(0, 0, 0, 0.5);
+        /* Затемнение фона */
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
 
-/* Содержимое модального окна */
-.modal-content {
+    /* From Uiverse.io by adamgiebl */
+    .card {
+        margin-top: -230px;
+        margin-left: 30px;
+        width: 190px;
+        height: 254px;
+        border-radius: 20px;
+        padding: 5px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    }
 
-    text-align: center;
-}
+    .card__content {
+        background: rgb(5, 6, 45);
+        border-radius: 17px;
+        width: 100%;
+        height: 100%;
+    }
 
-/* Кнопка закрытия */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 20px;
-    cursor: pointer;
-}
+    /* Содержимое модального окна */
+    .modal-content {
+
+        text-align: center;
+    }
+
+    /* Кнопка закрытия */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        font-size: 20px;
+        cursor: pointer;
+    }
 
 
-/* From Uiverse.io by satyamchaudharydev */
-.button {
-    margin-left: 45px;
-    margin-top: 110px;
-    --width: 100px;
-    --height: 35px;
-    --tooltip-height: 35px;
-    --tooltip-width: 150px;
-    --gap-between-tooltip-to-button: 18px;
-    --button-color: #1163ff;
-    --tooltip-color: #fff;
-    width: var(--width);
-    height: var(--height);
-    background: var(--button-color);
-    position: relative;
-    text-align: center;
-    border-radius: 0.45em;
-    font-family: "Arial";
-    transition: background 0.3s;
-}
+    /* From Uiverse.io by satyamchaudharydev */
+    .button {
+        margin-left: 45px;
+        margin-top: 110px;
+        --width: 100px;
+        --height: 35px;
+        --tooltip-height: 35px;
+        --tooltip-width: 150px;
+        --gap-between-tooltip-to-button: 18px;
+        --button-color: #1163ff;
+        --tooltip-color: #fff;
+        width: var(--width);
+        height: var(--height);
+        background: var(--button-color);
+        position: relative;
+        text-align: center;
+        border-radius: 0.45em;
+        font-family: "Arial";
+        transition: background 0.3s;
+    }
 
-.button::before {
-    position: absolute;
-    content: attr(data-tooltip);
-    width: var(--tooltip-width);
-    height: var(--tooltip-height);
-    background-color: var(--tooltip-color);
-    font-size: 0.9rem;
-    color: #111;
-    border-radius: .25em;
-    line-height: var(--tooltip-height);
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
-    left: calc(50% - var(--tooltip-width) / 2);
-}
+    .button::before {
+        position: absolute;
+        content: attr(data-tooltip);
+        width: var(--tooltip-width);
+        height: var(--tooltip-height);
+        background-color: var(--tooltip-color);
+        font-size: 0.9rem;
+        color: #111;
+        border-radius: .25em;
+        line-height: var(--tooltip-height);
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+        left: calc(50% - var(--tooltip-width) / 2);
+    }
 
-.button::after {
-    position: absolute;
-    content: '';
-    width: 0;
-    height: 0;
-    border: 10px solid transparent;
-    border-top-color: var(--tooltip-color);
-    left: calc(50% - 10px);
-    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
-}
+    .button::after {
+        position: absolute;
+        content: '';
+        width: 0;
+        height: 0;
+        border: 10px solid transparent;
+        border-top-color: var(--tooltip-color);
+        left: calc(50% - 10px);
+        bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+    }
 
-.button::after,
-.button::before {
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.5s;
-}
+    .button::after,
+    .button::before {
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.5s;
+    }
 
-.text {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.button-wrapper,
-.text,
-.icon {
-    overflow: hidden;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    color: #fff;
-}
+    .button-wrapper,
+    .text,
+    .icon {
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+    }
 
-.text {
-    top: 0
-}
+    .text {
+        top: 0
+    }
 
-.text,
-.icon {
-    transition: top 0.5s;
-}
+    .text,
+    .icon {
+        transition: top 0.5s;
+    }
 
-.icon {
-    color: #fff;
-    top: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+    .icon {
+        color: #fff;
+        top: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-.icon svg {
-    width: 24px;
-    height: 24px;
-}
+    .icon svg {
+        width: 24px;
+        height: 24px;
+    }
 
-.button:hover {
-    background: #6c18ff;
-}
+    .button:hover {
+        background: #6c18ff;
+    }
 
-.button:hover .text {
-    top: -100%;
-}
+    .button:hover .text {
+        top: -100%;
+    }
 
-.button:hover .icon {
-    top: 0;
-}
+    .button:hover .icon {
+        top: 0;
+    }
 
-.button:hover:before,
-.button:hover:after {
-    opacity: 1;
-    visibility: visible;
-}
+    .button:hover:before,
+    .button:hover:after {
+        opacity: 1;
+        visibility: visible;
+    }
 
-.button:hover:after {
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
-}
+    .button:hover:after {
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+    }
 
-.button:hover:before {
-    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
-}
+    .button:hover:before {
+        bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+    }
 
-.main-div-ul {
-    margin-top: 50px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.card-li {
-    width: 190px;
-    height: 254px;
-    border-radius: 30px;
-    background: #e0e0e0;
-    box-shadow: 15px 15px 30px #bebebe,
-        -15px -15px 30px #ffffff;
-}
-
-.T-55 {
-    transform: rotate(90deg);
-}
-
-.Tiger {
-    transform: rotate(90deg);
-}
-
-.IS-2 {
-    transform: rotate(90deg);
-}
-
-.FV-4005 {
-    transform: rotate(270deg);
-}
-
-.Leopard1 {
-    transform: rotate(90deg);
 }
